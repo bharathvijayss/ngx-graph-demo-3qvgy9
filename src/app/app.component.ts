@@ -123,13 +123,28 @@ export class AppComponent implements OnInit {
     this.nodes.push({
       id: 'bv',
       label: 'BV',
-      type: 'Action'
+      type: 'Action',
     });
     this.links.push({
       id: 'bvEdge',
       source: 'c2',
       target: 'bv',
       label: 'custom label BV',
+    });
+    this.update$.next(true);
+  }
+
+  menutriggered(menuOption: string) {
+    this.nodes.push({
+      id: 'bv1',
+      label: 'BV1',
+      type: 'Action',
+    });
+    this.links.push({
+      id: 'bvEdge1',
+      source: 'c2',
+      target: 'bv1',
+      label: 'custom label BV1',
     });
     this.update$.next(true);
   }

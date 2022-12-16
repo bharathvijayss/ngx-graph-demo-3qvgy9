@@ -186,15 +186,24 @@
             >
               {{ node.label }}
             </svg:text>
-            <svg:circle r="5" mat-button [matMenuTriggerFor]="menu">
+            <svg:circle
+              r="5"
+              mat-button
+              [matMenuTriggerFor]="menu"
+              *ngIf="node.type === 'Action'"
+            >
               Menu
             </svg:circle>
           </svg:g>
         </ng-template>
 
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="menutriggered()">Item 1</button>
-          <button mat-menu-item (click)="menutriggered()">Item 2</button>
+          <button mat-menu-item (click)="menutriggered('Item 1')">
+            Item 1
+          </button>
+          <button mat-menu-item (click)="menutriggered('Item 2')">
+            Item 2
+          </button>
         </mat-menu>
 
         <ng-template #linkTemplate let-link>
